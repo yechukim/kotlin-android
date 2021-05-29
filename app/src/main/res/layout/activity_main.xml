@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/topLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/keypadTableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <TextView
+        android:id="@+id/expressionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="end"
+        android:textColor="#aaaaaa"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/keypadTableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- android:shrinkColumns="*"를 사용하여 안의 열이
+    밖으로 빠져나가지 않게 설정함 -->
+    <TableLayout
+        android:id="@+id/keypadTableLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingStart="15dp"
+        android:paddingTop="21dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="21dp"
+        android:shrinkColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+        app:layout_constraintVertical_weight="1.5">
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/clearButton"
+                style="@style/buttonStyle"
+                android:onClick="clearButtonClicked"
+                android:text="C" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/buttonStyle"
+                android:clickable="false"
+                android:enabled="false"
+                android:text="()"
+                android:textColor="@color/green" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonModular"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="%"
+                android:textColor="@color/green" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonDivider"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="/"
+                android:textColor="@color/green" />
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button7"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="7"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button8"
+                style="@style/buttonStyle"
+                android:text="8"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button9"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="9"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonMulti"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="X"
+                android:textColor="@color/green" />
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button4"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="4"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button5"
+                style="@style/buttonStyle"
+                android:text="5"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button6"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="6"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonMinus"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="ㅡ"
+                android:textColor="@color/green" />
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button1"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="1"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button2"
+                style="@style/buttonStyle"
+                android:text="2"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button3"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="3"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonPlus"
+                style="@style/buttonStyle"
+                android:onClick="buttonOnClicked"
+                android:text="+"
+                android:textColor="@color/green" />
+        </TableRow>
+
+        <TableRow android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/historyButton"
+                style="@style/buttonStyle"
+                android:onClick="historyButtonClicked"
+                android:src="@drawable/ic_baseline_access_time_24"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button0"
+                style="@style/buttonStyle"
+                android:text="0"
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/buttonStyle"
+                android:clickable="false"
+                android:enabled="false"
+                android:text="."
+                android:textColor="@color/textColor" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/resultButton"
+                style="@style/buttonStyle"
+                android:background="@drawable/button_background_green"
+                android:onClick="resultButtonClicked"
+                android:text="="
+                android:textColor="@color/white" />
+        </TableRow>
+
+    </TableLayout>
+
+    <!--history 버튼 누를 때 보이는 창 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/historyLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/keypadTableLayout"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/closeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:onClick="closeHistoryButtonClicked"
+            android:stateListAnimator="@null"
+            android:text="닫기"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/historyClearButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/closeButton">
+
+            <LinearLayout
+                android:id="@+id/historyLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/historyClearButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="38dp"
+            android:background="@drawable/button_background_green"
+            android:onClick="historyClearButtonClicked"
+            android:text="계산기록 삭제"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

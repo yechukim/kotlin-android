@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="buttonStyle">
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">7dp</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+</resources>
